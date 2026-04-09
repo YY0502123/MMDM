@@ -4,7 +4,7 @@ A simple, precise magnetic force formula was proposed by modifying the Magnetic 
 
 This repository provides MATLAB code that implements the **highly accurate magnetic force model** proposed in:
 
-> Yang, Y., Xiang, H. (2023). **A simple and precise formula for magnetic forces in nonlinear piezoelectric energy harvesting**. *Nonlinear Dynamics*, 111, 6085–6110.  
+> Yang, Y., Xiang, H. (2023). **A simple and precise formula for magnetic forces in nonlinear piezoelectric energy harvesting**. *Nonlinear Dynamics*, 111(7), 6085–6110.  
 > https://doi.org/10.1007/s11071-022-08160-5
 
 The code calculates the voltage frequency response of a monostable piezoelectric energy harvester with magnetic end coupling. It compares the traditional magnetic dipole model (MDM) with the **present model**, demonstrating that the proposed model yields much more accurate results (relative error < 1% in typical cases).
