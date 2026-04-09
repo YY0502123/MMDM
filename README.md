@@ -17,10 +17,12 @@ The code calculates the voltage frequency response of a monostable piezoelectric
 ## Run the code
 
 1. Open MATLAB (R2023b or later, with Symbolic Math Toolbox).
-2. Run `main.m`.
+2. Run `main.mlx`.
 3. The script will generate two key figures:
    - Magnetic force comparison (MDM vs present model vs reference data)
+   ![Magnetic force comparison](Figures/Magnetic_force.png)
    - Voltage frequency response (stable/unstable branches, comparison between MDM and present model)
+   ![Voltage frequency response](Figures/FRC.png)
 
 Optional Excel files (`Magnetic force_Upadrashta.xlsx` and `FR_Upadrashta.xlsx`) can be placed in the same folder to plot reference data points.
 
