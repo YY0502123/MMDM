@@ -40,5 +40,5 @@ If you use this code, please cite the paper:
   pages={6085--6110},
   year={2023},
   publisher={Springer},
- doi= {10.1007/s11071-023-08288-y}
+ doi= {10.1007/s11071-022-08160-5}
 }
