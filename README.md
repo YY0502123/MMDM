@@ -26,6 +26,36 @@ The code calculates the voltage frequency response of a monostable piezoelectric
 
 Optional Excel files (`Magnetic force_Upadrashta.xlsx` and `FR_Upadrashta.xlsx`) can be placed in the same folder to plot reference data points.
 
+## Magnetic force correction functions
+
+This repository provides two standalone MATLAB functions to compute the correction parameters α and β for cylindrical and cuboidal magnets:
+
+- `correct_cylindermagnet_coeff(MA, R, T, d)` – for cylindrical magnets  
+- `correct_cuboidalmagnet_coeff(MA, W, H, L, d)` – for cuboidal magnets (square cross-section recommended)
+
+**Inputs:**  
+- `MA` : magnetization (A/m)  
+- `R` / `W, H, L` : magnet half‑dimensions (m)  
+- `T` : half‑thickness (m)  
+- `d` : spacing between magnet centers (m) – can be a **vector**; the outputs will be arrays of the same length.
+
+**Outputs:**  
+- `alpha`, `beta` : correction coefficients (array if `d` is a vector)  
+- `dmin` : minimum valid spacing (m)
+
+**Performance:**  
+The functions use **parallel computing (`parfor`)** to speed up calculations when `d` is a vector. Ensure the Parallel Computing Toolbox is installed.
+
+These functions can be used independently in any MATLAB script:
+
+```matlab
+d_vec = 10e-3:1e-3:20e-3;
+[alpha, beta] = correct_cylindermagnet_coeff(891e3, 5e-3, 2.5e-3, d_vec);
+F_corrected = alpha .* beta.^2 .* F_MDM(beta .* w_tip);
+```
+
+See the main script `main.mlx` for a complete example of applying them to a nonlinear energy harvester.
+
 ## Citation
 
 If you use this code, please cite the paper:
@@ -40,5 +70,5 @@ If you use this code, please cite the paper:
   pages={6085--6110},
   year={2023},
   publisher={Springer},
- doi= {10.1007/s11071-022-08160-5}
+  doi={10.1007/s11071-022-08160-5}
 }
