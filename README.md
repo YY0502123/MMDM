@@ -50,7 +50,7 @@ These functions can be used independently in any MATLAB script:
 
 ```matlab
 d_vec = 10e-3:1e-3:20e-3;
-[alpha, beta] = correct_cylindermagnet_coeff(891e3, 5e-3, 2.5e-3, d_vec);
+[alpha, beta, dmin] = correct_cylindermagnet_coeff(891e3, 5e-3, 2.5e-3, d_vec);
 F_corrected = alpha .* beta.^2 .* F_MDM(beta .* w_tip);
 ```
 
