@@ -56,6 +56,18 @@ F_corrected = alpha .* beta.^2 .* F_MDM(beta .* w_tip);
 
 See the main script `main.mlx` for a complete example of applying them to a nonlinear energy harvester.
 
+##Correction coefficients α(d) and β(d)
+
+The correction parameters α and β depend on the magnet spacing `d`. The provided script `plot_alpha_beta.mlx` computes and plots α(d) and β(d) for both cylindrical and cuboidal magnets over a wide spacing range.
+
+- For d ≤ 150 mm, α and β are obtained from polynomial fits calibrated against exact magnetostatic models.
+
+- For d > 150 mm, the coefficients are exponentially extrapolated to approach 1 as d → ∞, ensuring physically correct asymptotic behaviour and extending the valid range to arbitrarily large spacings.
+
+The figure below shows typical curves for cylindrical (left) and cuboidal (right) magnets.
+
+You can run `plot_alpha_beta.mlx` to reproduce this figure for your own magnet sizes.
+
 ## Citation
 
 If you use this code, please cite the paper:
