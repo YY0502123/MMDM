@@ -65,6 +65,7 @@ The correction parameters α and β depend on the magnet spacing `d`. The provid
 - For d > 150 mm, the coefficients are exponentially extrapolated to approach 1 as d → ∞, ensuring physically correct asymptotic behaviour and extending the valid range to arbitrarily large spacings.
 
 The figure below shows typical curves for cylindrical (left) and cuboidal (right) magnets.
+![alpha_beta_curves](Figures/alpha_beta_curves.png)
 
 You can run `plot_alpha_beta.mlx` to reproduce this figure for your own magnet sizes.
 
